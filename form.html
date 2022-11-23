@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="form.css" />
+</head>
+
+<body>
+  <div class="form-wrap">
+    <div class="container shadow">
+      <!-- <div class="row w-full">
+        <div class="col-md-12 m-0 p-0 form-heading">
+          <h1 class="btn-block">HNBGU Council and Club Registration Form</h1>
+        </div>
+      </div> -->
+      <div class="row justify-content-center align-items-center" id="signup">
+        <div class="col-12 relative bordertop">
+          <div class="sliding " id="sliding"></div>
+          <div class="row steps bordertop">
+            <div id="step1" class="col-3 flexcenter"><small>step-1</small> </div>
+            <div id="step2" class="col-3 flexcenter"><small>step-2</small></div>
+            <div id="step3" class="col-3 flexcenter"><small>step-3</small></div>
+            <div id="step4" class="col-3 flexcenter"><small>step-4</small></div>
+          </div>
+        </div>
+
+        <form action="<?php echo $_SERVER['PHP_SELF']
+        ?>" method="post" class="form p-md-5" id="form">
+          <!-- PERSONAL INFO -->
+
+          <div class="personalinfo" id="prslninfo">
+            <h1>PERSONAL INFORMATION</h1>
+            <div class="row">
+              <div class="col-md-6 mt-3 mt-3">
+                <label for="username">Firstname<span class="imp-op">*</span></label>
+                <input required type="text" name="fname" class="form-control" />
+              </div>
+              <div class="col-md-6 mt-3 mt-3">
+                <label for="username">Lastname<span class="imp-op">*</span></label>
+                <input required type="text" name="lname" class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mt-3">
+                <label for="">Mother's Name<span class="imp-op">*</span></label>
+                <input required type="text" name="Mname" class="form-control" />
+              </div>
+              <div class="col-md-6 mt-3">
+                <label for="">Father's Name<span class="imp-op">*</span></label>
+                <input required type="text" name="Fname" class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mt-3">
+                <label for="">Email<span class="imp-op">*</span></label>
+                <input id="email" required type="email" name="email" class="form-control" />
+                <span id="emailerror"></span>
+              </div>
+              <div class="col-md-6 mt-3">
+                <label for="">Contact Number<span class="imp-op">*</span></label>
+                <input id="conctnumber" required type="number" name="phone" class="form-control" />
+                <span id="numberror"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mt-3">
+                <label for="">Gender<span class="imp-op">*</span></label>
+                <select name="gender" id="gender" class="form-control">
+                  <option value="1">Male</option>
+                  <option value="2">Female</option>
+                </select>
+              </div>
+              <div class="col-md-6 mt-3">
+                <label for="">Date of Birth<span class="imp-op">*</span></label>
+                <input required type="date" name="DOB" class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 mt-3">
+                <h3>ADDRESS</h3>
+              </div>
+            </div>
+            <div class="row outerrad mt-3">
+              <h4 class="mt-3">Permanent Address</h4>
+              <div class="col-md-12 mt-3">
+                <input type="text" name="address1" class="form-control" placeholder="Address" />
+              </div>
+              <div class="row">
+                <div class="col-md-6 mt-3">
+                  <input required type="text" name="district1" class="form-control" placeholder="District" />
+                </div>
+                <div class="col-md-6 mt-3">
+                  <input required type="text" name="city1" class="form-control" placeholder="City" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mt-3">
+                  <input required type="text" name="state1" class="form-control" placeholder="State" />
+                </div>
+                <div class="col-md-6 mt-3">
+                  <input required type="number" name="pincode1" class="form-control" placeholder="Pin Code" />
+                </div>
+              </div>
+              <h4 class="mt-3">Temporary Address <span><input type="checkbox" name="" id="checkBox"  onclick="myFunction()"></span></h4>
+              <div id="checking">
+                <div class="col-md-12 mt-3">
+                  <input type="text" name="address2" class="form-control" placeholder="Address" />
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mt-3">
+                    <input required type="text" name="district2" class="form-control" placeholder="District" />
+                  </div>
+                  <div class="col-md-6 mt-3">
+                    <input required type="text" name="city2" class="form-control" placeholder="City" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mt-3">
+                    <input required type="text" name="state2" class="form-control" placeholder="State" />
+                  </div>
+                  <div class="col-md-6 mt-3">
+                    <input required type="number" name="pincode2" class="form-control" placeholder="Pin Code" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 flexcenter">
+                <button type="button" id="next1">Next</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Educational Details -->
+
+          <div class="educationalinfo jaddu" id="eduinfo">
+            <h1>Educational Info</h1>
+            <div class="row">
+              <div class="col-md-3 mt-3">
+                <label for="">which Deparment are you In? <span class="imp-op">*</span></label>
+                <select name="years" id="department" class="form-control">
+                  <option value="">Deparment---</option>
+                  <option value="CSE">Computer Science & Engineering</option>
+                  <option value="IT">Information Technology</option>
+                  <option value="ECE">Electronic and Communication Engineering</option>
+                  <option value="ME">Mechanical Engineering</option>
+                  <option value="EIE">Instrumentation Engineering</option>
+                </select>
+              </div>
+              <!-- for cse department -->
+              <div class="col-md-3 mt-3 jaddu" id="Courses">
+                <label for="">Course<span class="imp-op">*</span></label>
+                <select name="years" id="Course" class="form-control">
+                  <option value="B.TECH">C.SE</option>
+                  <option value="M.CA">M.CA</option> 
+                  <option value="M.tech">M.TECh</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mt-3">
+                <div class="row">
+                  <div class="col-6">
+                    <label for="">Session<span class="imp-op">*</span></label>
+                    <input required type="number" name="" class="form-control" />
+                  </div>
+                  <div class="col-6">
+                    <label for="">Year<span class="imp-op">*</span></label>
+                    <select name="year" id="year" class="form-control">
+                      <option value="year">year---</option>
+                    </select>
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-6 mt-3">
+                <div class="row">
+                  <div class="col-6">
+                    <label for="">Semester<span class="imp-op">*</span></label>
+                    <select name="semester" id="semester" class="form-control">
+                      <option value="year">semester--</option>
+                    </select>
+                  </div>
+                  <div class="col-6">
+                    <label for="">CGPA<span class="imp-op">*</span></label>
+                    <input required type="number" name="" class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <h4 class="mt-3">10th or its Equivalent</h4>
+              <div class="col-md-6 mt-3">
+                <label for="">College/School<span class="imp-op">*</span></label>
+                <input required type="text" name="school" class="form-control" />
+              </div>
+              <div class="col-md-6 mt-3">
+                <label for="">Place<span class="imp-op">*</span></label>
+                <input required type="text" name="school_place" class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-6 mt-3">
+                    <label for="">Year of passing<span class="imp-op">*</span></label>
+                    <select name="years" id="" class="form-control">
+                      <option value="Year"></option>
+                      <option value="1995">1995</option>
+                      <option value="1996">1996</option>
+                      <option value="1997">1997</option>
+                      <option value="1998">1998</option>
+                      <option value="1999">1999</option>
+                      <option value="2000">2000</option>
+                      <option value="2001">2001</option>
+                      <option value="2002">2002</option>
+                      <option value="2003">2003</option>
+                      <option value="2004">2004</option>
+                      <option value="2005">2005</option>
+                      <option value="2006">2006</option>
+                      <option value="2007">2007</option>
+                      <option value="2008">2008</option>
+                      <option value="2009">2009</option>
+                      <option value="2010">2010</option>
+                      <option value="2011">2011</option>
+                      <option value="2012">2012</option>
+                      <option value="2013">2013</option>
+                      <option value="2014">2014</option>
+                      <option value="2015">2015</option>
+                      <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                      <option value="2019">2019</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                    </select>
+                  </div>
+                  <div class="col-6 mt-3">
+                    <label for="">Total marks<span class="imp-op"></span></label>
+                    <input required type="number" name="10thTotal" class="form-control" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-6 mt-3">
+                    <label for="">Marks Obtained<span class="imp-op"></span></label>
+                    <input required type="number" name="10thMarks" class="form-control" />
+                  </div>
+                  <div class="col-6 mt-3">
+                    <label for="">Percentage<span class="imp-op">*</span></label>
+                    <div class="relative">
+                      <input required type="number" name="10thPer" class="form-control" />
+                      <span class="percentage">%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <h4 class="mt-3">12th or its Equivalent</h4>
+              <div class="col-md-6 mt-3">
+                <label for="">College/University<span class="imp-op">*</span></label>
+                <input required type="text" name="College" class="form-control" />
+              </div>
+              <div class="col-md-6 mt-3">
+                <label for="">Place<span class="imp-op">*</span></label>
+                <input required type="text" name="12thplace" class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-6 mt-3">
+                    <label for="">Year of passing<span class="imp-op">*</span></label>
+                    <select name="years" id="" class="form-control">
+                      <option value="Year"></option>
+                      <option value="1995">1995</option>
+                      <option value="1996">1996</option>
+                      <option value="1997">1997</option>
+                      <option value="1998">1998</option>
+                      <option value="1999">1999</option>
+                      <option value="2000">2000</option>
+                      <option value="2001">2001</option>
+                      <option value="2002">2002</option>
+                      <option value="2003">2003</option>
+                      <option value="2004">2004</option>
+                      <option value="2005">2005</option>
+                      <option value="2006">2006</option>
+                      <option value="2007">2007</option>
+                      <option value="2008">2008</option>
+                      <option value="2009">2009</option>
+                      <option value="2010">2010</option>
+                      <option value="2011">2011</option>
+                      <option value="2012">2012</option>
+                      <option value="2013">2013</option>
+                      <option value="2014">2014</option>
+                      <option value="2015">2015</option>
+                      <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                      <option value="2019">2019</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                    </select>
+                  </div>
+                  <div class="col-6 mt-3">
+                    <label for="">Total marks<span class="imp-op"></span></label>
+                    <input required type="number" name="12thTotal" class="form-control" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-6 mt-3">
+                    <label for="">Marks Obtained<span class="imp-op"></span></label>
+                    <input required type="number" name="12thMarks" class="form-control" />
+                  </div>
+                  <div class="col-6 mt-3">
+                    <label for="">Percentage<span class="imp-op">*</span></label>
+                    <div class="relative">
+                      <input required type="number" name="12thPer" class="form-control" />
+                      <span class="percentage">%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- when MCA department clicked -->
+            <div class="row">
+              <h4 class="mt-3">Graduation</h4>
+              <div class="col-md-6 mt-3">
+                <label for="">Institute/University<span class="imp-op">*</span></label>
+                <input required type="text" name="university" class="form-control" />
+              </div>
+              <div class="col-md-6 mt-3">
+                <label for="">Course<span class="imp-op">*</span></label>
+                <input required type="text" name="grad-course" class="form-control" />
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-6 mt-3">
+                <label for="">Place<span class="imp-op">*</span></label>
+                <input required type="text" name="grad_place" class="form-control" />
+              </div>
+              <div class="col-md-6">
+
+                <div class="row">
+                  <div class="col-6 mt-3">
+                    <label for="">Session<span class="imp-op"></span></label>
+                    <input required type="number" name="gradSession" class="form-control" />
+                  </div>
+                  <div class="col-6 mt-3">
+                    <label for="">Overall CGPA<span class="imp-op">*</span></label>
+                    <div class="relative">
+                      <input required type="number" name="grad_CGPA" class="form-control" />
+                      <span class="percentage">%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 flexstart">
+                <button type="button" id="back1">Back</button>
+              </div>
+              <div class="col-6 flexend">
+                <button type="button" id="next2">Next</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Details -->
+          <div class="professionalinfo jaddu" id="prfsnlinfo">
+            <h1>Professional Info</h1>
+            <div class="row">
+              <div class="col-6 flexstart">
+                <button type="button" id="back2">Back</button>
+              </div>
+              <div class="col-6 flexend">
+                <button type="submit" id="submit">Submit</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- welcome -->
+          <div class="welcome jaddu" id="welcome">
+            <div class="row">
+              <div class="col-12 flexcenter">
+                <p class="welcome p-5"> we are very happy to connect with you! </p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="form.js"></script>
+  <script src="yearsem.js"></script>
+  <script defer>
+    YearSem('year', 'semester');
+  </script>
+</body>
+
+</html>

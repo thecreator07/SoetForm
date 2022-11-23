@@ -1,0 +1,161 @@
+ html{
+    scroll-behavior: smooth;
+ }
+ body{
+    padding: 0;
+    margin: 0;
+ }
+.form-wrap {
+    padding: 50px;
+}
+.container{
+    border-radius: 25px;
+}
+.bordertop{
+    border-radius:25px 25px 0px 0px;
+    
+}
+.sliding{
+    position: absolute;
+    z-index: 10000;
+    width: 25%;
+    height: 10%;
+    top: 90%;
+    left: 0;
+    background: #008236;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+.translation_25{
+    left: 25%;
+}
+.translation_50{
+    left: 50%;
+}
+.translation_75{
+    left: 75%;
+}
+
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    
+}
+
+.form-control:focus {
+    border: 1px solid rgba(0, 128, 0, 0.836);
+    box-shadow: none !important;
+}
+
+
+.jaddu {
+    display: none;
+}
+
+.relative {
+    position: relative;
+}
+
+.percentage {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    font-weight: 600;
+}
+
+.imp-op {
+    color: red;
+}
+
+.steps
+{
+    background: rgb(134, 210, 127);
+    color: rgb(28, 16, 16);
+    font-size: 1.2rem;
+    font-weight: 500;
+   
+}
+.flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.flexend {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.flexstart {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.bordind {
+    border: 5px solid black;
+}
+
+/* .flexrow{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+} */
+/* .triangle{
+    width: 0;
+    height: 0;
+    background: #008236;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid red;
+
+} */
+.welcome{
+    color: #008236;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: justify;
+}
+button {
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border-radius: 15px;
+    border: 0;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgba(72, 199, 72, 0.674);
+    backdrop-filter: blur(30px);
+    /* box-shadow: 4px 4px 10px 0px rgba(71, 146, 80, 0.73) inset; */
+    color: black;
+}
+#emailError,#numberror {
+    font-size: 12px;
+    color: #be0f0f;
+  }
+
+  .borderbottom{
+    border-bottom:5px solid#008236;
+ }
+#checkbox{
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+}
+ @media only screen and (max-width:400px)  {
+    .form-wrap {
+        padding: 5px;
+    }
+ }
