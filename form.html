@@ -38,21 +38,21 @@
             <div class="row">
               <div class="col-md-6 mt-3 mt-3">
                 <label for="username">Firstname<span class="imp-op">*</span></label>
-                <input required type="text" name="fname" class="form-control" />
+                <input id="fname" required type="text" name="fname" class="form-control" />
               </div>
               <div class="col-md-6 mt-3 mt-3">
                 <label for="username">Lastname<span class="imp-op">*</span></label>
-                <input required type="text" name="lname" class="form-control" />
+                <input id="lname" required type="text" name="lname" class="form-control" />
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 mt-3">
                 <label for="">Mother's Name<span class="imp-op">*</span></label>
-                <input required type="text" name="Mname" class="form-control" />
+                <input id="mname" required type="text" name="Mname" class="form-control" />
               </div>
               <div class="col-md-6 mt-3">
                 <label for="">Father's Name<span class="imp-op">*</span></label>
-                <input required type="text" name="Fname" class="form-control" />
+                <input id="faname" required type="text" name="Fname" class="form-control" />
               </div>
             </div>
             <div class="row">
@@ -77,7 +77,7 @@
               </div>
               <div class="col-md-6 mt-3">
                 <label for="">Date of Birth<span class="imp-op">*</span></label>
-                <input required type="date" name="DOB" class="form-control" />
+                <input id="dob" required type="date" name="DOB" class="form-control" />
               </div>
             </div>
             <div class="row">
@@ -88,25 +88,28 @@
             <div class="row outerrad mt-3">
               <h4 class="mt-3">Permanent Address</h4>
               <div class="col-md-12 mt-3">
-                <input type="text" name="address1" class="form-control" placeholder="Address" />
+                <input id="address" type="text" name="address1" class="form-control" placeholder="Address" />
               </div>
               <div class="row">
                 <div class="col-md-6 mt-3">
-                  <input required type="text" name="district1" class="form-control" placeholder="District" />
+                  <input id="district" required type="text" name="district1" class="form-control"
+                    placeholder="District" />
                 </div>
                 <div class="col-md-6 mt-3">
-                  <input required type="text" name="city1" class="form-control" placeholder="City" />
+                  <input id="city" required type="text" name="city1" class="form-control" placeholder="City" />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 mt-3">
-                  <input required type="text" name="state1" class="form-control" placeholder="State" />
+                  <input id="state" required type="text" name="state1" class="form-control" placeholder="State" />
                 </div>
                 <div class="col-md-6 mt-3">
-                  <input required type="number" name="pincode1" class="form-control" placeholder="Pin Code" />
+                  <input id="pincode" required type="number" name="pincode1" class="form-control"
+                    placeholder="Pin Code" />
                 </div>
               </div>
-              <h4 class="mt-3">Temporary Address <span><input type="checkbox" name="" id="checkBox"  onclick="myFunction()"></span></h4>
+              <h4 class="mt-3">Temporary Address <span><input type="checkbox" name="" id="checkBox"
+                    onclick="myFunction()"></span></h4>
               <div id="checking">
                 <div class="col-md-12 mt-3">
                   <input type="text" name="address2" class="form-control" placeholder="Address" />
@@ -157,7 +160,7 @@
                 <label for="">Course<span class="imp-op">*</span></label>
                 <select name="years" id="Course" class="form-control">
                   <option value="B.TECH">C.SE</option>
-                  <option value="M.CA">M.CA</option> 
+                  <option value="M.CA">M.CA</option>
                   <option value="M.tech">M.TECh</option>
                 </select>
               </div>
@@ -352,7 +355,6 @@
                 <input required type="text" name="grad_place" class="form-control" />
               </div>
               <div class="col-md-6">
-
                 <div class="row">
                   <div class="col-6 mt-3">
                     <label for="">Session<span class="imp-op"></span></label>
@@ -380,7 +382,78 @@
 
           <!-- Professional Details -->
           <div class="professionalinfo jaddu" id="prfsnlinfo">
+            <!-- workexperience
+                1.student
+                2.fresher
+                3.1-2 year
+                 skill
+                 course/achievement certificate(new section)
+                 1.course name
+                 2.issuer(exa..udemy,sih)
+                 internship or training 
+                 1.company name
+                 2.position/role
+                 3.duration
+                 4.certificate
+            -->
             <h1>Professional Info</h1>
+            <div class="row">
+              <div class="col-md-12">
+                <label for="">Experience<span class="imp-op">*</span></label>
+                <select name="experience" id="experience" class="form-control">
+                  <option value="0">Student</option>
+                  <option value="1">Fresher</option>
+                  <option value="2">1-2 year</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mt-3">
+                <label for="">Skill<span class="imp-op"></span></label>
+                <select name="skill" id="skill" class="form-control">
+                  <option value="Software skills">Software skills</option>
+                  <option value="Critical thinking">Critical thinking</option>
+                  <option value="problem solving">problem solving</option>
+                  <option value="communications skills">communications skills</option>
+                  <option value="Leadership">Leadership</option>
+                </select>
+              </div>
+              <div class="col-md-6 mt-3">
+                <div id="selectedskill"></div>
+              </div>
+            </div>
+            <div class="row ">
+              <h4 class="mt-3">Achievement</h4>
+              <div class="col-md-6 mt-3">
+                <label for="">Course<span class="imp-op"></span></label>
+                <input id="skill_course" required type="text" name="skill_course" class="form-control" />
+              </div>
+              <div class="col-md-3 mt-3">
+                <label for="">Certificate<span class="imp-op"></span></label>
+                <input type="file" name="file" id="cfile">
+              </div>
+            </div>
+            <div class="row">
+              <h4 class="mt-3">Internship/Training</h4>
+              <div class="col-md-6 mt-3">
+                <label for="">Company name<span class="imp-op"></span></label>
+                <input id="company" required type="text" name="company" class="form-control" />
+              </div>
+              <div class="col-md-6 mt-3">
+                <label for="">Position/Role<span class="imp-op"></span></label>
+                <input id="company_role" required type="text" name="role" class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mt-3">
+                <label for="">Duration<span class="imp-op"></span></label>
+                <input id="duration" required type="number" name="duration" class="form-control" />
+              </div>
+              <div class="col-md-6 mt-3">
+                <label for="">Position/Role<span class="imp-op"></span></label>
+                <input id="pfile" required type="file" name="role" class="form-control" />
+              </div>
+            </div>
             <div class="row">
               <div class="col-6 flexstart">
                 <button type="button" id="back2">Back</button>
@@ -390,12 +463,11 @@
               </div>
             </div>
           </div>
-
           <!-- welcome -->
           <div class="welcome jaddu" id="welcome">
             <div class="row">
               <div class="col-12 flexcenter">
-                <p class="welcome p-5"> we are very happy to connect with you! </p>
+                <p class="welcome p-5"> We are very happy to connect with you! </p>
               </div>
             </div>
           </div>

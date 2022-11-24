@@ -6,40 +6,58 @@ const cPassword = document.querySelector("#c-pass");
 const passErr = document.querySelectorAll("#passError");
 const conctnumber = document.querySelector("#conctnumber");
 const numberror = document.querySelector("#numberror");
+ 
+const fname=document.getElementById("fname");
+const lname=document.getElementById("lname");
+const mname=document.getElementById("mname");
+const faname=document.getElementById("faname");
+const gender=document.getElementById("gender");
+const dob=document.getElementById("dob");
+const address=document.getElementById("address");
+const district=document.getElementById("district");
+const city=document.getElementById("city");
+const state=document.getElementById("state");
+const pincode=document.getElementById("pincode");
 
 
+
+console.log(conctnumber,numberror);
 // for mobile number validation
 if (conctnumber) {
   conctnumber.addEventListener('input', () => {
-    const numbvalue = conctnumber.value
-    if (numbvalue = " ") {
-      numberror[0].textContent = "Enter your mobile number ";
+    const numbvalue = conctnumber.value;
+    console.log(numbvalue);
+    if (numbvalue === "") {
+      numberror.textContent = "Enter your mobile number ";
     }
     else {
-      numberror[0].textContent = "";
+      numberror.textContent = "";
     }
   });
 }
 
-
-// for gmail validation
-if (emails) {
-  emails.oninput = () => {
-    const emailvalue = emails.value;
-    const regEx =
-      (/^[0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/);
-    if (emailvalue.match(regEx)) {
-      emailerr[0].textContent = "Strong Password!";
-      emailerr[0].style.color = "green";
-      emails.style.border = "1px solid green";
-    } else {
-      emailerr[0].textContent =
-        "Password must contain atleast 8 character,  one capital alphabet [A-Z],  one small alphabet [a-z],  one number [0-9] and a special character (@,$,*,/) ";
-      emailerr[0].style.color = "red";
-      emails.style.border = "1px solid red";
-    }
-  };
+if(fname && lname && mname && faname && gender && dob && address && district && city && state && pincode===" "){
+  next1.removeAttribute("disabled");
+  next1.style.cursor="pointer";
 }
+// for gmail validation
+// if (emails) {
+//   emails.oninput = () => {
+//     const emailvalue = emails.value;
+//     const regEx =
+//       (/^[0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/);
+//     if (emailvalue.match(regEx)) {
+//       emailerr.textContent = "Strong Password!";
+//       emailerr.style.color = "green";
+//       emails.style.border = "1px solid green";
+//     } else {
+//       emailerr.textContent =
+//         "Password must contain atleast 8 character,  one capital alphabet [A-Z],  one small alphabet [a-z],  one number [0-9] and a special character (@,$,*,/) ";
+//       emailerr.style.color = "red";
+//       emails.style.border = "1px solid red";
+//     }
+//   };
+// }
 
 const step1 = document.getElementById("step1");
 const step2 = document.getElementById("step2");
@@ -61,6 +79,10 @@ const sliding = document.querySelector("#sliding");
 
 if (next1) {
 
+  if(fname==" " && lname== " " && mname==" " && faname==" " && gender==" " && dob==" " && address==" " && district==" " && city==" " && state==" " && pincode==" "){
+    next1.removeAttribute("disabled");
+    next1.style.cursor="pointer";
+  }
   next1.onclick = function () {
     sliding.classList.add("translation_25")
     prslninfo.classList.add("jaddu");
