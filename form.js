@@ -40,24 +40,6 @@ if(fname && lname && mname && faname && gender && dob && address && district && 
   next1.removeAttribute("disabled");
   next1.style.cursor="pointer";
 }
-// for gmail validation
-// if (emails) {
-//   emails.oninput = () => {
-//     const emailvalue = emails.value;
-//     const regEx =
-//       (/^[0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/);
-//     if (emailvalue.match(regEx)) {
-//       emailerr.textContent = "Strong Password!";
-//       emailerr.style.color = "green";
-//       emails.style.border = "1px solid green";
-//     } else {
-//       emailerr.textContent =
-//         "Password must contain atleast 8 character,  one capital alphabet [A-Z],  one small alphabet [a-z],  one number [0-9] and a special character (@,$,*,/) ";
-//       emailerr.style.color = "red";
-//       emails.style.border = "1px solid red";
-//     }
-//   };
-// }
 
 const step1 = document.getElementById("step1");
 const step2 = document.getElementById("step2");
